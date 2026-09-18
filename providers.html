@@ -1,0 +1,105 @@
+<!--
+    Página dondese consumen los datos JSON y se renderizan las tarjetas dinámicas de cada profesional.
+-->
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Proveedores | Servify Asunción</title>
+
+        <meta
+            name="description"
+            content="Encontrá proveedores de servicios en Asunción."
+        >
+
+        </head>
+
+        <body>
+
+        <header>
+            <nav>
+            <a href="index.html">Servify Asunción</a>
+
+            <div>
+                <a href="index.html">Inicio</a>
+                <a href="providers.html" aria-current="page">Proveedores</a>
+                <button type="button" aria-label="Cambiar tema">
+                Tema
+                </button>
+            </div>
+            </nav>
+        </header>
+
+
+        <main>
+
+            <section class="providers-header">
+
+            <p>Proveedores locales</p>
+
+            <h1>Encontrá el servicio que necesitás</h1>
+
+            <p>
+                Explorá proveedores de servicios en Asunción
+                y encontrá una opción adecuada para vos.
+            </p>
+
+            </section>
+
+
+            <section class="providers-section">
+
+            <header>
+                <h2>Proveedores</h2>
+
+                <label for="category-filter">
+                Filtrar por categoría
+                </label>
+
+                <select id="category-filter">
+                <option value="all">Todas las categorías</option>
+                <!-- Las demás opciones son generadas con JavaScript -->
+                </select>
+            </header>
+
+
+            <!-- Estado de carga -->
+            <div id="loading-state" class="loading-state" hidden>
+                <p>Cargando proveedores...</p>
+            </div>
+
+
+            <!-- Estado sin resultados -->
+            <div id="empty-state" class="empty-state" hidden>
+                <p>No encontramos proveedores para esta categoría.</p>
+            </div>
+
+
+            <!-- Estado de error -->
+            <div id="error-state" class="error-state" hidden>
+                <p>
+                No pudimos cargar los proveedores.
+                Intentá nuevamente más tarde.
+                </p>
+            </div>
+
+
+            <!-- Contenedor de proveedores -->
+            <div id="providers-list" class="providers-list"> </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>Servify Asunción</p>
+            <p>Encontrá proveedores de servicios locales.</p>
+        </footer>
+
+        <script src="js/providers.js" defer></script>
+
+        </body>
+    </html>

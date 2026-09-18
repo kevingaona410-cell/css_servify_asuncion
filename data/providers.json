@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre": "Carlos González",
+    "profesion": "Electricista",
+    "calificacion": 4.8,
+    "edad": 34,
+    "descripcion": "Especialista en instalaciones eléctricas residenciales y comerciales. Ofrece soluciones seguras y adaptadas a las necesidades de cada cliente."
+  },
+  {
+    "id": 2,
+    "nombre": "María López",
+    "profesion": "Plomera",
+    "calificacion": 4.6,
+    "edad": 29,
+    "descripcion": "Profesional dedicada a instalaciones, reparaciones y mantenimiento de sistemas de agua para hogares y comercios."
+  },
+  {
+    "id": 3,
+    "nombre": "Pedro Ramírez",
+    "profesion": "Carpintero",
+    "calificacion": 4.9,
+    "edad": 41,
+    "descripcion": "Experto en trabajos de madera, muebles a medida y reparaciones de estructuras para vivienda y oficina."
+  },
+  {
+    "id": 4,
+    "nombre": "Ana Torres",
+    "profesion": "Albañil",
+    "calificacion": 4.7,
+    "edad": 38,
+    "descripcion": "Realiza remodelaciones, refuerzos y acabados de construcción con atención al detalle y materiales de calidad."
+  },
+  {
+    "id": 5,
+    "nombre": "Luis Fernández",
+    "profesion": "Gasista",
+    "calificacion": 4.5,
+    "edad": 36,
+    "descripcion": "Especializado en instalaciones y mantenimiento de sistemas de gas, con foco en seguridad y cumplimiento normativo."
+  },
+  {
+    "id": 6,
+    "nombre": "Sofía Martínez",
+    "profesion": "Pintora",
+    "calificacion": 4.8,
+    "edad": 31,
+    "descripcion": "Diseña y ejecuta trabajos de pintura residencial y comercial con acabados duraderos y estéticos."
+  },
+  {
+    "id": 7,
+    "nombre": "Javier Ruiz",
+    "profesion": "Cerrajero",
+    "calificacion": 4.4,
+    "edad": 33,
+    "descripcion": "Ofrece instalación y reparación de cerraduras, sistemas de seguridad y control de acceso para hogares y negocios."
+  },
+  {
+    "id": 8,
+    "nombre": "Lucía Gómez",
+    "profesion": "Limpieza",
+    "calificacion": 4.9,
+    "edad": 28,
+    "descripcion": "Brinda servicios de limpieza profunda y mantenimiento doméstico con atención personalizada y puntualidad."
+  },
+  {
+    "id": 9,
+    "nombre": "Roberto Silva",
+    "profesion": "Jardinería",
+    "calificacion": 4.6,
+    "edad": 40,
+    "descripcion": "Especialista en mantenimiento de jardines, podas y diseño de espacios verdes para hogares y patios."
+  },
+  {
+    "id": 10,
+    "nombre": "Daniela Cruz",
+    "profesion": "Tecnico en Refrigeración",
+    "calificacion": 4.7,
+    "edad": 35,
+    "descripcion": "Soluciona problemas de climatización y refrigeración comercial y doméstica con diagnósticos rápidos y efectivos."
+  }
+]
