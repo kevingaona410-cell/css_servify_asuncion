@@ -1,109 +1,69 @@
-<!--
-    Página dondese consumen los datos JSON y se renderizan las tarjetas dinámicas de cada profesional.
--->
+<!-- Página 2/3 - Proveedores | Cumple docs/challenge.md:26: listado en tarjetas vía fetch + 3 estados -->
 <!DOCTYPE html>
-    <html lang="es">
-        <head>
+<html lang="es">
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Proveedores | Servify Asunción</title>
-
-        <meta
-            name="description"
-            content="Encontrá proveedores de servicios en Asunción."
-        >
-
-        </head>
-
-        <body>
-
+        <meta name="description" content="Encontrá proveedores de servicios en Asunción.">
+    </head>
+    <body>
         <header>
             <nav>
-            <a href="index.html">Servify Asunción</a>
-
-            <div>
-                <a href="index.html">Inicio</a>
-                <a href="providers.html" aria-current="page">Proveedores</a>
-                <button type="button" aria-label="Cambiar tema">
-                Tema
-                </button>
-            </div>
+                <a href="index.html">Servify Asunción</a>
+                <div>
+                    <a href="index.html">Inicio</a>
+                    <a href="providers.html" aria-current="page">Proveedores</a>
+                    <button type="button" aria-label="Cambiar tema">Tema</button>
+                </div>
             </nav>
         </header>
 
-
         <main>
-
-            <!-- Encabezado principal de la sección donde se presenta la idea
-            general de búsqueda de proveedores locales. -->
+            <!-- Encabezado: contexto de búsqueda local -->
             <section class="providers-header">
-
-            <p>Proveedores locales</p>
-
-            <h1>Encontrá el servicio que necesitás</h1>
-
-            <p>
-                Explorá proveedores de servicios en Asunción
-                y encontrá una opción adecuada para vos.
-            </p>
-
+                <p>Proveedores locales</p>
+                <h1>Encontrá el servicio que necesitás</h1>
+                <p>Explorá proveedores de servicios en Asunción y encontrá una opción adecuada para vos.</p>
             </section>
 
-
-            <!-- Sección principal que contiene la lista de profesionales,
-            el filtro por categoría y los estados de carga/error. -->
+            <!-- Listado dinámico: filtro + estados + contenedor. Los datos NO están hardcodeados (se inyectan vía js/providers.js usando fetch a data/providers.json) -->
             <section class="providers-section">
+                <header>
+                    <h2>Proveedores</h2>
+                    <label for="category-filter">Filtrar por categoría</label>
+                    <select id="category-filter">
+                        <option value="all">Todas las categorías</option>
+                        <!-- Opciones generadas dinámicamente con populateProfessionFilter() -->
+                    </select>
+                </header>
 
-            <header>
-                <h2>Proveedores</h2>
+                <!-- Estado: Cargando (docs/challenge.md:40) - visible mientras fetch está pendiente -->
+                <div id="loading-state" class="loading-state" hidden>
+                    <p>Cargando proveedores...</p>
+                </div>
 
-                <label for="category-filter">
-                Filtrar por categoría
-                </label>
+                <!-- Estado: Sin resultados (docs/challenge.md:41) - se muestra cuando el filtro no coincide -->
+                <div id="empty-state" class="empty-state" hidden>
+                    <p>No encontramos proveedores para esta categoría.</p>
+                </div>
 
-                <select id="category-filter">
-                <option value="all">Todas las categorías</option>
-                <!-- Las demás opciones son generadas con JavaScript -->
-                </select>
-            </header>
+                <!-- Estado: Error (docs/challenge.md:42) - se muestra si fetch falla -->
+                <div id="error-state" class="error-state" hidden>
+                    <p>No pudimos cargar los proveedores. Intentá nuevamente más tarde.</p>
+                </div>
 
-
-            <!-- Estado de carga -->
-            <div id="loading-state" class="loading-state" hidden>
-                <p>Cargando proveedores...</p>
-            </div>
-
-
-            <!-- Estado sin resultados -->
-            <div id="empty-state" class="empty-state" hidden>
-                <p>No encontramos proveedores para esta categoría.</p>
-            </div>
-
-
-            <!-- Estado de error -->
-            <div id="error-state" class="error-state" hidden>
-                <p>
-                No pudimos cargar los proveedores.
-                Intentá nuevamente más tarde.
-                </p>
-            </div>
-
-
-            <!-- Contenedor de proveedores -->
-            <div id="providers-list" class="providers-list"> </div>
-
+                <!-- Contenedor donde createProviderCard() inserta las tarjetas (nombre/categoría/calificación/acción) -->
+                <div id="providers-list" class="providers-list"></div>
             </section>
-
         </main>
-
 
         <footer>
             <p>Servify Asunción</p>
             <p>Encontrá proveedores de servicios locales.</p>
         </footer>
 
+        <!-- Lógica desacoplada: simula consumo de API real vía fetch (ver js/providers.js) -->
         <script src="js/providers.js" defer></script>
-
-        </body>
-    </html>
+    </body>
+</html>
