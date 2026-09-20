@@ -1,34 +1,51 @@
-// provider.js - Página 3/3 Detalle | Cumple docs/challenge.md:43 (tercera página funcional)
+// provider.js - Página 3/3 Detalle | Cumple docs/challenge.md:43
 // Flujo: lee ?id= de la URL -> fetch desacoplado a data/providers.json -> find por id -> inyecta DOM
+// 3 estados (análogos a providers.html): Cargando / No encontrado / Error
 
 // Lee el id del proveedor desde la query string (ej: provider.html?id=3)
-// URLSearchParams evita parseo manual y soporta URLs sin id (retorna null)
 const params = new URLSearchParams(window.location.search);
 const providerId = params.get("id");
 
-// fetch: misma fuente desacoplada que providers.js (simula API real, docs/challenge.md:34)
-// No se hardcodean datos en HTML; todo viene del JSON
+// Referencias a los estados del perfil individual (provider.html)
+// querySelector por clase para compatibilidad + getElementById para nuevos estados
+const providerError = document.querySelector(".provider-error"); // sección "Proveedor no encontrado" -> se muestra si el id no existe (estado Not Found)
+const providerProfile = document.querySelector(".provider-profile"); // contenedor del detalle -> se oculta si hay error y se muestra si el find tiene éxito
+const loadingState = document.getElementById("loading-state");
+const errorState = document.getElementById("error-state");
+const notFoundState = document.getElementById("not-found-state"); // alias de providerError con id
+const profileSection = document.getElementById("provider-profile"); // alias de providerProfile con id
+
 fetch("data/providers.json")
     .then((response) => response.json())
     .then((providers) => {
-        // find: busca coincidencia exacta por id; Number() normaliza string -> number
         const provider = providers.find((provider) => provider.id === Number(providerId));
 
-        // Guard v1: evita TypeError si id inexistente o ?id vacío (provider === undefined)
-        // En esta primera versión solo se evita el crash y se deja el placeholder del HTML
+        // Oculta cargando siempre que termina el fetch
+        if (loadingState) loadingState.hidden = true;
+
         if (!provider) {
-            console.warn(`Proveedor no encontrado para id=${providerId}`);
+            // Estado: No encontrado
+            providerProfile.hidden = true;
+            if (profileSection) profileSection.hidden = true;
+            providerError.hidden = false;
+            if (notFoundState) notFoundState.hidden = false;
             return;
         }
 
-        // Inyección directa al DOM (estructura ya existe en provider.html)
+        // Estado: Éxito - inyección directa al DOM
         document.getElementById("provider-name").textContent = provider.nombre;
         document.getElementById("provider-profession").textContent = provider.profesion;
         document.getElementById("provider-age").textContent = `${provider.edad} años`;
         document.getElementById("provider-rating").textContent = `★ ${provider.calificacion}`;
         document.getElementById("provider-description").textContent = provider.descripcion;
+
+        providerProfile.hidden = false;
+        if (profileSection) profileSection.hidden = false;
     })
     .catch((error) => {
-        // v1 minimal: solo loguea error de red/parseo; no manipula estados visuales extra
+        if (loadingState) loadingState.hidden = true;
+        providerProfile.hidden = true;
+        if (profileSection) profileSection.hidden = true;
+        if (errorState) errorState.hidden = false;
         console.error("Error al cargar el proveedor:", error);
     });

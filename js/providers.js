@@ -1,7 +1,3 @@
-// providers.js - Página 2/3 Proveedores | Cumple docs/challenge.md:26 y 34
-// Flujo: fetch desacoplado a data/providers.json -> render tarjetas -> filtro por categoría
-// 3 estados del challenge: loading (fetch pendiente), error (catch), empty (renderProviders sin match)
-
 // Referencias DOM - estados y contenedores definidos en providers.html
 const providersList = document.getElementById("providers-list");
 const loadingState = document.getElementById("loading-state");
@@ -9,8 +5,7 @@ const errorState = document.getElementById("error-state");
 const emptyState = document.getElementById("empty-state");
 const professionFilter = document.getElementById("category-filter");
 
-// Crea la tarjeta visual de un proveedor.Estructura cumple challenge: nombre / categoría (profesion) / calificación visual (★) / acción (ver detalle).
-
+// Crea la tarjeta visual de un proveedor: nombre / categoría (profesion) / calificación visual (★) / acción (ver detalle).
 function createProviderCard(provider) {
     const article = document.createElement("article");
     article.innerHTML = `
@@ -23,12 +18,9 @@ function createProviderCard(provider) {
     return article;
 }
 
-/**
- * Pobla el <select> con profesiones únicas del dataset.
- * Permite filtrar sin hardcodear categorías en el HTML.
- */
+//Pobla el filtro de categorías en el HTML.
 function populateProfessionFilter(providers) {
-    const professions = [...new Set(providers.map((provider) => provider.profesion))];
+    const professions = [...new Set(providers.map((provider) => provider.profesion))]; // extrae la profesion sin repetir en un array
     professions.forEach((profession) => {
         const option = document.createElement("option");
         option.value = profession;
@@ -36,32 +28,28 @@ function populateProfessionFilter(providers) {
         professionFilter.appendChild(option);
     });
 }
-
-/**
- * Renderiza la lista filtrada y gestiona el estado "Sin resultados".
- * Vacía el contenedor y muestra emptyState si providers.length === 0.
- */
+// Renderiza la lista de proveedores y gestiona el estado "Sin resultados").
 function renderProviders(providers) {
-    providersList.innerHTML = "";
-
+    providersList.innerHTML = "";   // limpia tarjetas anteriores para no duplicar al filtrar.
+    
+    //muestra el estado vacio y hace return (no renderiza nada más).
     if (providers.length === 0) {
         emptyState.hidden = false;
         return;
     }
-
+    
     emptyState.hidden = true;
-
+    
     providers.forEach((provider) => {
         const card = createProviderCard(provider);
         providersList.appendChild(card);
     });
 }
 
-// Estado inicial: Cargando visible mientras fetch está pendiente (docs/challenge.md:40)
+// Cargando visible mientras fetch está pendiente (docs/challenge.md:40)
 loadingState.hidden = false;
 
-// fetch: simula consumo de API real desacoplada (docs/challenge.md:34 - datos NO hardcodeados en HTML)
-// Nota v1: se hace fetch directo a JSON local; en producción sería una API (json-server, REST).
+// se hace fetch directo a JSON local.
 fetch("data/providers.json")
     .then((response) => response.json())
     .then((providers) => {
@@ -76,8 +64,7 @@ fetch("data/providers.json")
         console.error(error);
     });
 
-// Filtro por categoría: vuelve a consultar el JSON y filtra en cliente (v1 simple).
-// Nota arquitectónica: v1 hace re-fetch en cada change; optimización futura es cachear providers en memoria.
+// vuelve a consultar el JSON y filtra en cliente.
 professionFilter.addEventListener("change", () => {
     const selectedProfession = professionFilter.value;
 

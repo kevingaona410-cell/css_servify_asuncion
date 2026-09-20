@@ -1,0 +1,232 @@
+/* home.css - Home | Hero, How it works, Categories, Final CTA */
+
+/* Hero - grande, atractivo, CTA destacado */
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px;
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  gap: 64px;
+  align-items: center;
+  min-height: 560px;
+}
+.hero p:first-child {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: -0.03em;
+  color: var(--blue-dark);
+  margin-bottom: 16px;
+}
+.hero > div:first-child > p:nth-of-type(2) {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+.hero a[href="providers.html"] {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  height: 48px; padding: 0 28px;
+  border-radius: var(--radius-sm);
+  background: var(--blue-dark);
+  color: #fff;
+  font-weight: 600; font-size: 15px;
+  box-shadow: var(--shadow-btn);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.hero a[href="providers.html"]:hover {
+  background: var(--blue-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+/* Ilustración vectorial placeholder - círculo deco + iconos flotantes */
+.hero > div:last-child {
+  height: 380px;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(320px 320px at 40% 50%, rgba(74,144,217,0.08), transparent 70%), var(--bg-alt);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+.hero > div:last-child::before {
+  content: "◆ ◯ ✦";
+  position: absolute;
+  inset: 0;
+  display: grid; place-items: center;
+  font-size: 28px;
+  letter-spacing: 12px;
+  color: var(--blue-soft);
+  opacity: 0.15;
+}
+.hero > div:last-child::after {
+  content: "Servicios conectados";
+  position: absolute;
+  bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: var(--text-light);
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* How it works - muy limpio, 3 pasos */
+.how-it-works {
+  background: var(--bg-alt);
+  padding: 80px;
+}
+.how-it-works > header {
+  position: static;
+  background: transparent;
+  border: none;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.how-it-works > header p:first-child {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+  margin-bottom: 8px;
+}
+.how-it-works h2 {
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  color: var(--blue-dark);
+  margin-bottom: 8px;
+}
+.how-it-works > header p:last-child { color: var(--text-light); font-size: 16px; }
+.how-it-works > div {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.how-it-works article {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.how-it-works article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.how-it-works article span {
+  display: inline-grid; place-items: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--blue-soft-light);
+  color: var(--blue-dark);
+  font-weight: 700; font-size: 14px;
+  margin-bottom: 16px;
+}
+.how-it-works article h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.how-it-works article p { color: var(--text-muted); font-size: 15px; line-height: 24px; }
+
+/* Categories */
+.categories {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px;
+}
+.categories > header {
+  position: static;
+  background: transparent;
+  border: none;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.categories > header p { font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 8px; }
+.categories h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+/* Grid de categorías - las cards reales se añadirán en HTML, no vía pseudo-elementos */
+.categories a[href="providers.html"] {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--blue-dark);
+  margin-top: 8px;
+}
+.categories a[href="providers.html"]:hover { color: var(--blue-soft); }
+
+/* Final CTA - azul oscuro con acento rojo sutil */
+.final-cta {
+  max-width: 1280px;
+  margin: 0 80px 80px;
+  background: var(--blue-dark);
+  border-radius: var(--radius-lg);
+  padding: 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta h2 { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+.final-cta p { color: #CBD5E1; font-size: 16px; margin-bottom: 24px; }
+.final-cta a {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  height: 48px; padding: 0 28px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--blue-dark);
+  font-weight: 600; font-size: 15px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.final-cta a::after {
+  content: "";
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--red-accent);
+  opacity: 0.9;
+}
+.final-cta a:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+/* Responsive home */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; padding: 48px 32px; min-height: auto; }
+  .hero h1 { font-size: 40px; line-height: 44px; }
+  .hero > div:last-child { height: 280px; }
+  .how-it-works { padding: 48px 32px; }
+  .how-it-works > div { grid-template-columns: 1fr; }
+  .categories { padding: 48px 32px; }
+  .category-list { grid-template-columns: repeat(2, 1fr); }
+  .final-cta { margin: 0 32px 48px; padding: 48px 32px; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 32px 20px; }
+  .hero h1 { font-size: 32px; line-height: 36px; }
+  .how-it-works { padding: 32px 20px; }
+  .categories { padding: 32px 20px; }
+  .category-list { grid-template-columns: 1fr; }
+  .final-cta { margin: 0 20px 32px; padding: 32px 20px; }
+  .final-cta h2 { font-size: 24px; }
+}
