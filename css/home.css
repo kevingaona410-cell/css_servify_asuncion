@@ -24,7 +24,7 @@
   font-size: 48px;
   line-height: 52px;
   letter-spacing: -0.03em;
-  color: var(--blue-dark);
+  color: var(--heading-color);
   margin-bottom: 16px;
 }
 .hero > div:first-child > p:nth-of-type(2) {
@@ -76,7 +76,7 @@
   transform: translateX(-50%);
   font-size: 13px;
   color: var(--text-light);
-  background: #fff;
+  background: var(--blue-alt);
   padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -95,6 +95,8 @@
   text-align: center;
   max-width: 640px;
   margin: 0 auto 48px;
+  border-radius: 999px;
+
 }
 .how-it-works > header p:first-child {
   font-weight: 600;
@@ -108,7 +110,7 @@
   font-weight: 700;
   font-size: 32px;
   letter-spacing: -0.02em;
-  color: var(--blue-dark);
+  color: var(--heading-color);
   margin-bottom: 8px;
 }
 .how-it-works > header p:last-child { color: var(--text-light); font-size: 16px; }
@@ -140,7 +142,7 @@
   font-weight: 700; font-size: 14px;
   margin-bottom: 16px;
 }
-.how-it-works article h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.how-it-works article h3 { font-size: 20px; font-weight: 700; color: var(--heading-color); margin-bottom: 8px; }
 .how-it-works article p { color: var(--text-muted); font-size: 15px; line-height: 24px; }
 
 /* Categories */
@@ -157,7 +159,7 @@
   margin-bottom: 32px;
 }
 .categories > header p { font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 8px; }
-.categories h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+.categories h2 { font-size: 32px; font-weight: 700; color: var(--heading-color); letter-spacing: -0.02em; }
 .category-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -170,7 +172,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 15px;
-  color: var(--blue-dark);
+  color: var(--blue-alt);
   margin-top: 8px;
 }
 .categories a[href="providers.html"]:hover { color: var(--blue-soft); }
@@ -178,7 +180,8 @@
 /* Final CTA - azul oscuro con acento rojo sutil */
 .final-cta {
   max-width: 1280px;
-  margin: 0 80px 80px;
+  width: calc(100% - 160px);
+  margin: 0 auto 80px;
   background: var(--blue-dark);
   border-radius: var(--radius-lg);
   padding: 64px;
@@ -186,6 +189,7 @@
   position: relative;
   overflow: hidden;
 }
+html:not([data-theme="dark"]) .final-cta { background: #4a8fd983; }
 .final-cta h2 { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
 .final-cta p { color: #CBD5E1; font-size: 16px; margin-bottom: 24px; }
 .final-cta a {
@@ -219,7 +223,7 @@
   .how-it-works > div { grid-template-columns: 1fr; }
   .categories { padding: 48px 32px; }
   .category-list { grid-template-columns: repeat(2, 1fr); }
-  .final-cta { margin: 0 32px 48px; padding: 48px 32px; }
+  .final-cta { width: calc(100% - 64px); margin: 0 auto 48px; padding: 48px 32px; }
 }
 @media (max-width: 640px) {
   .hero { padding: 32px 20px; }
@@ -227,6 +231,6 @@
   .how-it-works { padding: 32px 20px; }
   .categories { padding: 32px 20px; }
   .category-list { grid-template-columns: 1fr; }
-  .final-cta { margin: 0 20px 32px; padding: 32px 20px; }
+  .final-cta { width: calc(100% - 40px); margin: 0 auto 32px; padding: 32px 20px; }
   .final-cta h2 { font-size: 24px; }
 }

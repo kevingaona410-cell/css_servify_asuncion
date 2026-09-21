@@ -10,7 +10,7 @@
 .providers-header p:first-child {
   font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 8px;
 }
-.providers-header h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; color: var(--blue-dark); margin-bottom: 8px; }
+.providers-header h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; color: var(--heading-color); margin-bottom: 8px; }
 .providers-header p:last-child { color: var(--text-light); font-size: 16px; max-width: 640px; margin: 0 auto; }
 
 /* Sección listado */
@@ -30,19 +30,23 @@
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
-.providers-section h2 { font-size: 20px; font-weight: 700; }
+.providers-section h2 { font-size: 20px; font-weight: 700; color: var(--heading-color); }
 .providers-section label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
 #category-filter {
   height: 40px;
   padding: 0 36px 0 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--bg-header);
   font-size: 14px; font-weight: 500;
   color: var(--text);
   cursor: pointer;
 }
 #category-filter:focus { border-color: var(--blue-soft); }
+html[data-theme="dark"] #category-filter {
+  background: #102D4D;
+  border-color: #1E4266;
+}
 
 /* Estados loading / empty / error - muy limpios */
 .loading-state, .empty-state, .error-state {
@@ -77,13 +81,13 @@
 .providers-list article:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: #D6E4FF;
+  border-color: var(--blue-soft-border);
 }
-.providers-list article h3 { font-size: 16px; font-weight: 700; color: var(--blue-dark); }
+.providers-list article h3 { font-size: 16px; font-weight: 700; color: var(--heading-color); }
 .providers-list article p { font-size: 14px; color: var(--text-muted); }
 .providers-list article p:nth-of-type(3) { /* calificación */
   font-weight: 600;
-  color: var(--blue-dark);
+  color: var(--heading-color);
   letter-spacing: 0.02em;
 }
 .providers-list article a {

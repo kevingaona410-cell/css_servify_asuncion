@@ -8,10 +8,12 @@
   --blue-soft: #4A90D9;
   --blue-soft-light: #EFF6FF;
   --blue-soft-border: #E8F0FE;
-  --bg: #FFFFFF;
-  --bg-alt: #F8FAFC;
+  --bg: #F3FAFF;
+  --bg-alt: #E6F3FF;
+  --bg-header: #FFFFFF;
   --bg-footer: #0F172A;
   --text: #0B1D3A;
+  --heading-color: #0B1D3A;
   --text-muted: #475569;
   --text-light: #64748B;
   --border: #E2E8F0;
@@ -47,7 +49,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--bg);
+  background: var(--bg-header);
   border-bottom: 1px solid var(--border-light);
 }
 header nav {
@@ -62,7 +64,7 @@ header nav {
 header nav > a:first-child {
   font-weight: 700;
   font-size: 20px;
-  color: var(--blue-dark);
+  color: var(--heading-color);
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
@@ -71,13 +73,15 @@ header nav > a:first-child {
 /* Símbolo conexión/confianza: círculo + arco */
 header nav > a:first-child::before {
   content: "";
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: var(--blue-dark);
-  border: 2px solid var(--blue-soft);
-  box-shadow: inset -8px 0 0 var(--blue-soft);
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
+  background-image: url("../assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
+
 header nav div {
   display: flex;
   align-items: center;
@@ -132,10 +136,11 @@ header nav button[aria-pressed="true"]::after {
 
 /* Dark mode - activado vía html[data-theme="dark"] por js/theme.js */
 html[data-theme="dark"] {
-  --bg: #0B1220;
-  --bg-alt: #0F172A;
-  --bg-footer: #020617;
+  --bg: #071A33;
+  --bg-alt: #0B2545;
+  --bg-footer: #04101F;
   --text: #F1F5F9;
+  --heading-color: #DCEBFF;
   --text-muted: #CBD5E1;
   --text-light: #94A3B8;
   --border: #1E293B;
@@ -143,14 +148,14 @@ html[data-theme="dark"] {
   --blue-soft-light: #1E3A5F;
   --blue-soft-border: #1E3A5F;
 }
-html[data-theme="dark"] header { background: #0B1220; border-bottom-color: #1E293B; }
+html[data-theme="dark"] header { background: #071A33; border-bottom-color: #1E4266; }
 html[data-theme="dark"] header nav div a { color: #CBD5E1; }
 html[data-theme="dark"] header nav div a[aria-current="page"] { color: #fff; border-bottom-color: #4A90D9; }
 html[data-theme="dark"] .how-it-works article,
 html[data-theme="dark"] .providers-list article,
 html[data-theme="dark"] .provider-profile,
 html[data-theme="dark"] #loading-state,
-html[data-theme="dark"] #not-found-state { background: #111E33; border-color: #1E293B; }
+html[data-theme="dark"] #not-found-state { background: #102D4D; border-color: #1E4266; }
 
 /* 4. Botones */
 .btn-primary {
