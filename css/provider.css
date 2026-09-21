@@ -1,0 +1,79 @@
+/* provider.css - Ficha profesional central, organizada y limpia */
+
+/* Contenedor main centrado */
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 80px 80px;
+  display: grid;
+  gap: 24px;
+}
+
+/* Estados */
+#loading-state, #error-state, #not-found-state {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+#loading-state p, #error-state p { color: var(--text-muted); font-size: 15px; }
+#error-state { background: #FFF1F2; border-color: #FECDD3; }
+#error-state p { color: #9F1239; }
+#not-found-state h2 { font-size: 20px; font-weight: 700; color: var(--heading-color); margin-bottom: 8px; }
+#not-found-state p { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; }
+#not-found-state a, #error-state a {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  height: 40px; padding: 0 20px;
+  border-radius: var(--radius-sm);
+  background: var(--blue-dark);
+  color: #fff;
+  font-weight: 600; font-size: 14px;
+}
+.provider-error a:hover, #error-state a:hover { background: var(--blue-dark-hover); }
+
+/* Ficha central */
+.provider-profile {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+.provider-profile > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.provider-profile > a:first-child:hover { color: var(--blue-dark); }
+
+.provider-info > p:first-child {
+  font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 8px;
+}
+.provider-info h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: var(--heading-color); margin-bottom: 4px; }
+#provider-profession { font-size: 16px; font-weight: 600; color: var(--blue-soft); margin-bottom: 4px; }
+#provider-age { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
+#provider-rating { font-size: 15px; font-weight: 700; color: var(--blue-dark); letter-spacing: 0.02em; margin-bottom: 24px; }
+
+.provider-description {
+  border-top: 1px solid var(--border-light);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+.provider-description h2 { font-size: 16px; font-weight: 700; color: var(--heading-color); margin-bottom: 8px; }
+.provider-description p { color: var(--text-muted); font-size: 15px; line-height: 26px; }
+
+@media (max-width: 1024px) {
+  main { padding: 32px 32px 48px; }
+}
+@media (max-width: 640px) {
+  main { padding: 24px 20px 32px; }
+  .provider-profile { padding: 24px; }
+  .provider-info h1 { font-size: 26px; }
+}

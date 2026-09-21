@@ -1,4 +1,4 @@
-<!-- Página 2/3 - Proveedores | Cumple docs/challenge.md:26: listado en tarjetas vía fetch + 3 estados -->
+<!-- Proveedores | listado en tarjetas vía fetch -->
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Proveedores | Servify Asunción</title>
         <meta name="description" content="Encontrá proveedores de servicios en Asunción.">
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/providers.css">
     </head>
     <body>
         <header>
@@ -20,41 +22,44 @@
         </header>
 
         <main>
-            <!-- Encabezado: contexto de búsqueda local -->
+            <!-- contexto de búsqueda local -->
             <section class="providers-header">
                 <p>Proveedores locales</p>
                 <h1>Encontrá el servicio que necesitás</h1>
                 <p>Explorá proveedores de servicios en Asunción y encontrá una opción adecuada para vos.</p>
             </section>
 
-            <!-- Listado dinámico: filtro + estados + contenedor. Los datos NO están hardcodeados (se inyectan vía js/providers.js usando fetch a data/providers.json) -->
+            <!--  filtrado y contenedores.  -->
             <section class="providers-section">
                 <header>
                     <h2>Proveedores</h2>
                     <label for="category-filter">Filtrar por categoría</label>
                     <select id="category-filter">
                         <option value="all">Todas las categorías</option>
-                        <!-- Opciones generadas dinámicamente con populateProfessionFilter() -->
+                        <!-- Categorias desplegadas medisante script -->
                     </select>
                 </header>
+            
+            <!-- Estados -->
 
-                <!-- Estado: Cargando (docs/challenge.md:40) - visible mientras fetch está pendiente -->
+                <!-- Cargando - visible mientras fetch está pendiente -->
                 <div id="loading-state" class="loading-state" hidden>
                     <p>Cargando proveedores...</p>
                 </div>
 
-                <!-- Estado: Sin resultados (docs/challenge.md:41) - se muestra cuando el filtro no coincide -->
+                <!-- Sin resultados - se muestra cuando el filtro no coincide -->
                 <div id="empty-state" class="empty-state" hidden>
                     <p>No encontramos proveedores para esta categoría.</p>
                 </div>
 
-                <!-- Estado: Error (docs/challenge.md:42) - se muestra si fetch falla -->
+                <!-- Error - se muestra si fetch falla -->
                 <div id="error-state" class="error-state" hidden>
                     <p>No pudimos cargar los proveedores. Intentá nuevamente más tarde.</p>
                 </div>
 
-                <!-- Contenedor donde createProviderCard() inserta las tarjetas (nombre/categoría/calificación/acción) -->
+                <!-- Contenedor donde se inserta las tarjetas -->
                 <div id="providers-list" class="providers-list"></div>
+                <!-- generados mediante script-->
             </section>
         </main>
 
@@ -63,7 +68,7 @@
             <p>Encontrá proveedores de servicios locales.</p>
         </footer>
 
-        <!-- Lógica desacoplada: simula consumo de API real vía fetch (ver js/providers.js) -->
         <script src="js/providers.js" defer></script>
+        <script src="js/theme.js" defer></script>
     </body>
 </html>

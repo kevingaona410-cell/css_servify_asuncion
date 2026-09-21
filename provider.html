@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Perfil del proveedor | Servify Asunción</title>
         <meta name="description" content="Conocé más información sobre un proveedor de servicios en Asunción.">
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/provider.css">
     </head>
     <body>
         <header>
@@ -20,9 +22,22 @@
         </header>
 
         <main>
+            <!-- Estados del perfil individual (análogos a providers.html: loading/error/empty) -->
+            <div id="loading-state" class="loading-state">
+                <p>Cargando perfil...</p>
+            </div>
+            <div id="error-state" class="error-state" hidden>
+                <p>No pudimos cargar el perfil. Intentá nuevamente más tarde.</p>
+                <a href="providers.html">Volver a proveedores</a>
+            </div>
+            <section id="not-found-state" class="provider-error" hidden>
+                <h2>Proveedor no encontrado</h2>
+                <p>No pudimos encontrar el proveedor que estás buscando.</p>
+                <a href="providers.html">Ver proveedores</a>
+            </section>
+
             <!-- Detalle dinámico: se rellena vía js/provider.js con fetch a data/providers.json usando ?id= -->
-            <!-- Estructura cumple: muestra nombre/categoría/calificación (challenge tarjeta -> detalle) -->
-            <section class="provider-profile">
+            <section id="provider-profile" class="provider-profile" hidden>
                 <a href="providers.html">← Volver a proveedores</a>
                 <div class="provider-info">
                     <p>Perfil del proveedor</p>
@@ -36,13 +51,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Estado error/not-found: se muestra si el id no existe o fetch falla -->
-            <section class="provider-error" hidden>
-                <h2>Proveedor no encontrado</h2>
-                <p>No pudimos encontrar el proveedor que estás buscando.</p>
-                <a href="providers.html">Ver proveedores</a>
-            </section>
         </main>
 
         <footer>
@@ -50,7 +58,7 @@
             <p>Encontrá proveedores de servicios locales.</p>
         </footer>
 
-        <!-- Lógica desacoplada: lee ?id= y hace fetch (ver js/provider.js) -->
         <script src="js/provider.js" defer></script>
+        <script src="js/theme.js" defer></script>
     </body>
 </html>

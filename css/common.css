@@ -1,0 +1,220 @@
+/* common.css - Base compartida | Servify Asunción */
+/* Design System: azul oscuro primario, celeste secundario, blanco, rojo acento sutil, Inter, light/dark */
+
+/* 1. Variables */
+:root {
+  --blue-dark: #0B1D3A;
+  --blue-dark-hover: #0F2647;
+  --blue-soft: #4A90D9;
+  --blue-soft-light: #EFF6FF;
+  --blue-soft-border: #E8F0FE;
+  --bg: #F3FAFF;
+  --bg-alt: #E6F3FF;
+  --bg-header: #FFFFFF;
+  --bg-footer: #0F172A;
+  --text: #0B1D3A;
+  --heading-color: #0B1D3A;
+  --text-muted: #475569;
+  --text-light: #64748B;
+  --border: #E2E8F0;
+  --border-light: #E6E8F0;
+  --red-accent: #E11D48;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 8px rgba(11,29,58,0.06);
+  --shadow-md: 0 8px 24px rgba(11,29,58,0.10);
+  --shadow-btn: 0 4px 12px rgba(11,29,58,0.15);
+}
+
+/* 2. Reset / Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, select:focus-visible {
+  outline: 2px solid var(--blue-soft);
+  outline-offset: 2px;
+}
+img { max-width: 100%; display: block; }
+
+/* 3. Header - minimalista, espacioso */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-light);
+}
+header nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+header nav > a:first-child {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--heading-color);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Símbolo conexión/confianza: círculo + arco */
+header nav > a:first-child::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  background-image: url("../assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+header nav div {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+header nav div a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #334155;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+header nav div a[aria-current="page"] {
+  color: var(--blue-dark);
+  border-bottom-color: var(--blue-dark);
+}
+header nav div a:hover { color: var(--blue-dark); }
+
+/* Toggle sol/luna compacto */
+header nav button {
+  width: 56px; height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--blue-soft-border);
+  background: var(--blue-soft-light);
+  cursor: pointer;
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+  transition: background 0.5s;
+}
+header nav button::after {
+  content: "☀️";
+  position: absolute;
+  left: 2px; top: 2px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  display: grid; place-items: center;
+  text-indent: 0;
+  font-size: 12px;
+  transition: transform 0.5s, content 0.5s;
+}
+header nav button:hover { background: #E0ECFF; }
+header nav button[aria-pressed="true"] { background: #1E3A5F; border-color: #334155; }
+header nav button[aria-pressed="true"]::after {
+  content: "🌙";
+  transform: translateX(28px);
+  background: #0B1D3A;
+}
+
+/* Dark mode - activado vía html[data-theme="dark"] por js/theme.js */
+html[data-theme="dark"] {
+  --bg: #071A33;
+  --bg-alt: #0B2545;
+  --bg-footer: #04101F;
+  --text: #F1F5F9;
+  --heading-color: #DCEBFF;
+  --text-muted: #CBD5E1;
+  --text-light: #94A3B8;
+  --border: #1E293B;
+  --border-light: #1E293B;
+  --blue-soft-light: #1E3A5F;
+  --blue-soft-border: #1E3A5F;
+}
+html[data-theme="dark"] header { background: #071A33; border-bottom-color: #1E4266; }
+html[data-theme="dark"] header nav div a { color: #CBD5E1; }
+html[data-theme="dark"] header nav div a[aria-current="page"] { color: #fff; border-bottom-color: #4A90D9; }
+html[data-theme="dark"] .how-it-works article,
+html[data-theme="dark"] .providers-list article,
+html[data-theme="dark"] .provider-profile,
+html[data-theme="dark"] #loading-state,
+html[data-theme="dark"] #not-found-state { background: #102D4D; border-color: #1E4266; }
+
+/* 4. Botones */
+.btn-primary {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  height: 48px; padding: 0 28px;
+  border-radius: var(--radius-sm);
+  background: var(--blue-dark);
+  color: #fff;
+  font-weight: 600; font-size: 15px;
+  border: none;
+  box-shadow: var(--shadow-btn);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background: var(--blue-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  height: 48px; padding: 0 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-weight: 600; font-size: 15px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.btn-ghost:hover { border-color: var(--blue-soft); transform: translateY(-1px); }
+
+/* 5. Footer simple */
+footer {
+  background: var(--bg-footer);
+  color: #94A3B8;
+  padding: 48px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+footer p:first-child {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+footer p { font-size: 14px; max-width: 480px; }
+
+/* 6. Utilidades */
+.hidden, [hidden] { display: none !important; }
+
+/* 7. Responsive header/footer */
+@media (max-width: 1024px) {
+  header nav { padding: 16px 32px; }
+  footer { padding: 40px 32px; }
+}
+@media (max-width: 640px) {
+  header nav { padding: 14px 20px; gap: 16px; }
+  header nav div { gap: 16px; }
+  header nav div a { font-size: 14px; }
+  footer { padding: 32px 20px; }
+}
