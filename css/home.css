@@ -34,13 +34,15 @@
   max-width: 480px;
   margin-bottom: 28px;
 }
+
+html:not([data-theme="dark"]) .hero a {background: var(--blue-dark); color: #fff}
 .hero a[href="providers.html"] {
   display: inline-flex;
   align-items: center; justify-content: center;
   height: 48px; padding: 0 28px;
   border-radius: var(--radius-sm);
-  background: var(--blue-dark);
-  color: #fff;
+  background: #fff;
+  color:var(--blue-dark);
   font-weight: 600; font-size: 15px;
   box-shadow: var(--shadow-btn);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
