@@ -78,9 +78,7 @@
   color: var(--text-light);
   background: var(--blue-alt);
   padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
+ 
 }
 
 /* How it works - muy limpio, 3 pasos */
@@ -90,13 +88,14 @@
 }
 .how-it-works > header {
   position: static;
-  background: transparent;
-  border: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
   text-align: center;
   max-width: 640px;
   margin: 0 auto 48px;
   border-radius: 999px;
-
+  padding: 18px 28px;
 }
 .how-it-works > header p:first-child {
   font-weight: 600;
@@ -113,7 +112,7 @@
   color: var(--heading-color);
   margin-bottom: 8px;
 }
-.how-it-works > header p:last-child { color: var(--text-light); font-size: 16px; }
+.how-it-works > header p:last-child { color: var(--text-muted); font-size: 16px; }
 .how-it-works > div {
   max-width: 1280px;
   margin: 0 auto;
@@ -182,16 +181,16 @@
   max-width: 1280px;
   width: calc(100% - 160px);
   margin: 0 auto 80px;
-  background: var(--blue-dark);
+  background: var(--blue-dark-hover);
   border-radius: var(--radius-lg);
   padding: 64px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-html:not([data-theme="dark"]) .final-cta { background: #4a8fd983; }
+html:not([data-theme="dark"]) .final-cta { background: var(--blue-dark); }
 .final-cta h2 { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
-.final-cta p { color: #CBD5E1; font-size: 16px; margin-bottom: 24px; }
+.final-cta p { color: #fff; font-size: 16px; margin-bottom: 24px; }
 .final-cta a {
   display: inline-flex;
   align-items: center; justify-content: center;

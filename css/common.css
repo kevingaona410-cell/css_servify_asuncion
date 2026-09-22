@@ -5,17 +5,17 @@
 :root {
   --blue-dark: #0B1D3A;
   --blue-dark-hover: #0F2647;
-  --blue-soft: #4A90D9;
+  --blue-soft: #165ba5;
   --blue-soft-light: #EFF6FF;
   --blue-soft-border: #E8F0FE;
-  --bg: #F3FAFF;
+  --bg: #ffffff;
   --bg-alt: #E6F3FF;
   --bg-header: #FFFFFF;
   --bg-footer: #0F172A;
   --text: #0B1D3A;
   --heading-color: #0B1D3A;
   --text-muted: #475569;
-  --text-light: #64748B;
+  --text-light: #354050;
   --border: #E2E8F0;
   --border-light: #E6E8F0;
   --red-accent: #E11D48;
