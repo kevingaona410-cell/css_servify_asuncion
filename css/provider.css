@@ -56,8 +56,10 @@ main {
 .provider-info > p:first-child {
   font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 8px;
 }
+html[data-theme="dark"] .provider-info > p:first-child { color: #fff; }
 .provider-info h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: var(--heading-color); margin-bottom: 4px; }
 #provider-profession { font-size: 16px; font-weight: 600; color: var(--blue-soft); margin-bottom: 4px; }
+html[data-theme="dark"] #provider-profession { color: #fff; }
 #provider-age { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
 #provider-experience { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
 #provider-rating {

@@ -10,6 +10,7 @@
 .providers-header p:first-child {
   font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 8px;
 }
+html[data-theme="dark"] .providers-header p:first-child { color: #fff; }
 .providers-header h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; color: var(--heading-color); margin-bottom: 8px; }
 .providers-header p:last-child { color: var(--text-light); font-size: 16px; max-width: 640px; margin: 0 auto; }
 
