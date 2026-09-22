@@ -30,6 +30,11 @@
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
+.filter-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .providers-section h2 { font-size: 20px; font-weight: 700; color: var(--heading-color); }
 .providers-section label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
 #category-filter {
@@ -103,6 +108,13 @@ html[data-theme="dark"] #category-filter {
 }
 .providers-list article a:hover { background: var(--blue-dark-hover); transform: translateY(-1px); }
 
+.providers-list article .rating {
+  color: #FBBF24;
+  font-weight: 700;
+}
+
+
+
 /* Responsive */
 @media (max-width: 1024px) {
   .providers-header { padding: 32px 32px 24px; }
@@ -115,4 +127,8 @@ html[data-theme="dark"] #category-filter {
   .providers-section { padding: 0 20px 32px; }
   .providers-list { grid-template-columns: 1fr; }
   .providers-section > header { flex-direction: column; align-items: stretch; }
+  .filter-control {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

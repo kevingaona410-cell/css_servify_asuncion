@@ -7,51 +7,44 @@ const providersList = document.getElementById("providers-list");
 const loadingState = document.getElementById("loading-state");
 const errorState = document.getElementById("error-state");
 const emptyState = document.getElementById("empty-state");
+const professionFilter = document.getElementById("category-filter");
 
-loadingState.hidden = false;
+let providersCache = [];
 
-fetch("data/providers.json")
-    .then(response => response.json())
-    .then(providers => {
+async function loadProviders() {
+    loadingState.hidden = false;
+
+    try {
+        const response = await fetch("data/providers.json");
+        const providers = await response.json();
+        providersCache = providers;
+
         loadingState.hidden = true;
-
-        providers.forEach(provider => {
-            const card = createProviderCard(provider);
-
-            providersList.appendChild(card);
-    });
-
-    populateProfessionFilter(providers);
-    
-    
-}).catch(error => {
-    loadingState.hidden = true;
-    errorState.hidden = false;
-
-    console.error(error);
-});;
+        populateProfessionFilter(providers);
+        renderProviders(providers);
+    } catch (error) {
+        loadingState.hidden = true;
+        errorState.hidden = false;
+        console.error(error);
+    }
+}
 
 // Función reutilizable para crear la tarjeta visual de cada proveedor.
-// Aquí se arma el contenido de la tarjeta para luego insertarla en el DOM.
 function createProviderCard(provider) {
     const article = document.createElement("article");
 
     article.innerHTML = `
         <h3>${provider.nombre}</h3>
         <p>${provider.profesion}</p>
-        <p>${provider.edad} años</p>
-        <p>★ ${provider.calificacion}</p>
+        <p>${provider.experiencia} años de experiencia</p>
+        <p class="rating">★ ${provider.calificacion}</p>
         <a href="provider.html?id=${provider.id}">Detalles</a>
     `;
 
     return article;
 }
 
-// El filtro de categoría permite buscar proveedores por especialidad.
-const professionFilter = document.getElementById("category-filter");
-
 // Genera las opciones del select a partir de las profesiones disponibles
-// en la lista de proveedores para filtrar el contenido dinámicamente.
 function populateProfessionFilter(providers) {
     const professions = [...new Set(
         providers.map(provider => provider.profesion)
@@ -84,23 +77,14 @@ function renderProviders(providers) {
     });
 }
 
-// Cuando cambia la opción del filtro se muestran solo los proveedores de la profesión elegida
 professionFilter.addEventListener("change", () => {
-
     const selectedProfession = professionFilter.value;
+    const filteredProviders = selectedProfession === "all"
+        ? providersCache
+        : providersCache.filter(provider => provider.profesion === selectedProfession);
 
-    fetch("data/providers.json")
-        .then(response => response.json())
-        .then(providers => {
-        
-            const filteredProviders =
-            selectedProfession === "all"
-                ? providers
-                : providers.filter(
-                    provider => provider.profesion === selectedProfession
-                );
+    renderProviders(filteredProviders);
+});
 
-            renderProviders(filteredProviders);
-        });
-    });
+loadProviders();
 

@@ -59,8 +59,16 @@ main {
 .provider-info h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: var(--heading-color); margin-bottom: 4px; }
 #provider-profession { font-size: 16px; font-weight: 600; color: var(--blue-soft); margin-bottom: 4px; }
 #provider-age { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
-#provider-rating { font-size: 15px; font-weight: 700; color: var(--blue-dark); letter-spacing: 0.02em; margin-bottom: 24px; }
-
+#provider-experience { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
+#provider-rating {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 24px;
+}
+html[data-theme="dark"] #provider-rating {
+  color: #DCEBFF;
+}
 .provider-description {
   border-top: 1px solid var(--border-light);
   padding-top: 24px;

@@ -36,6 +36,7 @@ fetch("data/providers.json")
         document.getElementById("provider-name").textContent = provider.nombre;
         document.getElementById("provider-profession").textContent = provider.profesion;
         document.getElementById("provider-age").textContent = `${provider.edad} años`;
+        document.getElementById("provider-experience").textContent = `${provider.experiencia} años de experiencia`;
         document.getElementById("provider-rating").textContent = `★ ${provider.calificacion}`;
         document.getElementById("provider-description").textContent = provider.descripcion;
 

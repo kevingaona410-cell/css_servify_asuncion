@@ -96,6 +96,10 @@ html[data-theme="dark"] .hero a:hover {
 }
 
 /* How it works - muy limpio, 3 pasos */
+html[data-theme="dark"] .how-it-works {
+  background: #0B2545;
+}
+
 .how-it-works {
   background: var(--bg-alt);
   padding: 80px;
@@ -111,6 +115,11 @@ html[data-theme="dark"] .hero a:hover {
   border-radius: 999px;
   padding: 18px 28px;
 }
+html[data-theme="dark"] .how-it-works > header {
+  background: #102D4D;
+  border-color: #1E4266;
+}
+
 .how-it-works > header p:first-child {
   font-weight: 600;
   font-size: 12px;
@@ -146,6 +155,11 @@ html[data-theme="dark"] .hero a:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
+html[data-theme="dark"] .how-it-works article span {
+  background: #1E3A5F;
+  color: #DCEBFF;
+}
+
 .how-it-works article span {
   display: inline-grid; place-items: center;
   width: 48px; height: 48px;
