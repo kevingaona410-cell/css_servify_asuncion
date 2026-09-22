@@ -22,8 +22,7 @@ La aplicación fue diseñada priorizando:
 ---
 
 ## 🚀 Demo
-http://127.0.0.1:5500/index.html
-**Sitio desplegado:**  
+https://servify-asuncion.netlify.app/
 
 **Repositorio:**  
 https://github.com/kevingaona410-cell/css_servify_asuncion
