@@ -35,22 +35,28 @@
   margin-bottom: 28px;
 }
 
-html:not([data-theme="dark"]) .hero a {background: var(--blue-dark); color: #fff}
 .hero a[href="providers.html"] {
   display: inline-flex;
   align-items: center; justify-content: center;
   height: 48px; padding: 0 28px;
   border-radius: var(--radius-sm);
-  background: #fff;
-  color:var(--blue-dark);
+  background: var(--blue-dark);
+  color: #fff;
   font-weight: 600; font-size: 15px;
   box-shadow: var(--shadow-btn);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+html[data-theme="dark"] .hero a[href="providers.html"] {
+  background: #fff;
+  color: var(--blue-dark);
 }
 .hero a[href="providers.html"]:hover {
   background: var(--blue-dark-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
+}
+html[data-theme="dark"] .hero a[href="providers.html"]:hover {
+  background: #eaf3ff;
 }
 /* Ilustración vectorial placeholder - círculo deco + iconos flotantes */
 .hero > div:last-child {
@@ -169,21 +175,39 @@ html:not([data-theme="dark"]) .hero a {background: var(--blue-dark); color: #fff
 }
 /* Grid de categorías - las cards reales se añadirán en HTML, no vía pseudo-elementos */
 .categories a[href="providers.html"] {
-  display: block;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-sm);
+  background: var(--blue-dark);
+  color: #fff;
   font-weight: 600;
   font-size: 15px;
-  color: var(--blue-alt);
+  box-shadow: var(--shadow-btn);
   margin-top: 8px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.categories a[href="providers.html"]:hover { color: var(--blue-soft); }
+html[data-theme="dark"] .categories a[href="providers.html"] {
+  background: #fff;
+  color: var(--blue-dark);
+}
+.categories a[href="providers.html"]:hover {
+  background: var(--blue-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+html[data-theme="dark"] .categories a[href="providers.html"]:hover {
+  background: #eaf3ff;
+}
 
 /* Final CTA - azul oscuro con acento rojo sutil */
 .final-cta {
   max-width: 1280px;
   width: calc(100% - 160px);
   margin: 0 auto 80px;
-  background: var(--blue-dark-hover);
+  background: var(--blue-dark);
   border-radius: var(--radius-lg);
   padding: 64px;
   text-align: center;
