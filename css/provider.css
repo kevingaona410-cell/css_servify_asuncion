@@ -69,6 +69,50 @@ main {
 html[data-theme="dark"] #provider-rating {
   color: #DCEBFF;
 }
+.provider-contact-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+#provider-phone {
+  margin-bottom: 0;
+}
+#provider-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  background: var(--blue-dark);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: var(--shadow-btn);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+#provider-contact::before {
+  content: "\260E";
+  font-size: 16px;
+  line-height: 1;
+}
+#provider-contact:hover {
+  background: var(--blue-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+#provider-contact:active {
+  transform: translateY(0);
+}
+html[data-theme="dark"] #provider-contact {
+  background: #DCEBFF;
+  color: var(--blue-dark);
+}
+html[data-theme="dark"] #provider-contact:hover {
+  background: #fff;
+}
 .provider-description {
   border-top: 1px solid var(--border-light);
   padding-top: 24px;

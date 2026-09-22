@@ -38,6 +38,8 @@ fetch("data/providers.json")
         document.getElementById("provider-age").textContent = `${provider.edad} años`;
         document.getElementById("provider-experience").textContent = `${provider.experiencia} años de experiencia`;
         document.getElementById("provider-rating").textContent = `★ ${provider.calificacion}`;
+        document.getElementById("provider-phone").textContent = provider.telefono;
+        document.getElementById("provider-contact").href = `tel:${provider.telefono.replace(/\s+/g, "")}`;
         document.getElementById("provider-description").textContent = provider.descripcion;
 
         providerProfile.hidden = false;
