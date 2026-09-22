@@ -5,6 +5,7 @@
     "profesion": "Electricista",
     "calificacion": 4.8,
     "edad": 34,
+    "experiencia": 12,
     "descripcion": "Especialista en instalaciones eléctricas residenciales y comerciales. Ofrece soluciones seguras y adaptadas a las necesidades de cada cliente."
   },
   {
@@ -13,6 +14,7 @@
     "profesion": "Plomero",
     "calificacion": 4.6,
     "edad": 29,
+    "experiencia": 7,
     "descripcion": "Profesional dedicada a instalaciones, reparaciones y mantenimiento de sistemas de agua para hogares y comercios."
   },
   {
@@ -21,6 +23,7 @@
     "profesion": "Carpintero",
     "calificacion": 4.9,
     "edad": 41,
+    "experiencia": 18,
     "descripcion": "Experto en trabajos de madera, muebles a medida y reparaciones de estructuras para vivienda y oficina."
   },
   {
@@ -29,6 +32,7 @@
     "profesion": "Albañil",
     "calificacion": 4.7,
     "edad": 38,
+    "experiencia": 15,
     "descripcion": "Realiza remodelaciones, refuerzos y acabados de construcción con atención al detalle y materiales de calidad."
   },
   {
@@ -37,6 +41,7 @@
     "profesion": "Gasista",
     "calificacion": 4.5,
     "edad": 36,
+    "experiencia": 10,
     "descripcion": "Especializado en instalaciones y mantenimiento de sistemas de gas, con foco en seguridad y cumplimiento normativo."
   },
   {
@@ -45,6 +50,7 @@
     "profesion": "Pintor",
     "calificacion": 4.8,
     "edad": 31,
+    "experiencia": 9,
     "descripcion": "Diseña y ejecuta trabajos de pintura residencial y comercial con acabados duraderos y estéticos."
   },
   {
@@ -53,6 +59,7 @@
     "profesion": "Cerrajero",
     "calificacion": 4.4,
     "edad": 33,
+    "experiencia": 8,
     "descripcion": "Ofrece instalación y reparación de cerraduras, sistemas de seguridad y control de acceso para hogares y negocios."
   },
   {
@@ -61,6 +68,7 @@
     "profesion": "Personal de limpieza",
     "calificacion": 4.9,
     "edad": 28,
+    "experiencia": 6,
     "descripcion": "Brinda servicios de limpieza profunda y mantenimiento doméstico con atención personalizada y puntualidad."
   },
   {
@@ -69,6 +77,7 @@
     "profesion": "Jardinero",
     "calificacion": 4.6,
     "edad": 40,
+    "experiencia": 16,
     "descripcion": "Especialista en mantenimiento de jardines, podas y diseño de espacios verdes para hogares y patios."
   },
   {
@@ -77,6 +86,7 @@
     "profesion": "Técnico en refrigeración",
     "calificacion": 4.7,
     "edad": 35,
+    "experiencia": 11,
     "descripcion": "Soluciona problemas de climatización y refrigeración comercial y doméstica con diagnósticos rápidos y efectivos."
   }
 ]
