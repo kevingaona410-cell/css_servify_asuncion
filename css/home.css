@@ -35,7 +35,7 @@
   margin-bottom: 28px;
 }
 
-.hero a[href="providers.html"] {
+.hero a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -50,17 +50,17 @@
   box-shadow: var(--shadow-btn);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-html[data-theme="dark"] .hero a[href="providers.html"] {
+html[data-theme="dark"] .hero a {
   background: #fff;
   color: var(--blue-dark);
   border-color: #fff;
 }
-.hero a[href="providers.html"]:hover {
+.hero a:hover {
   background: var(--blue-dark-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
-html[data-theme="dark"] .hero a[href="providers.html"]:hover {
+html[data-theme="dark"] .hero a:hover {
   background: #eaf3ff;
   border-color: #eaf3ff;
 }
@@ -180,7 +180,7 @@ html[data-theme="dark"] .hero a[href="providers.html"]:hover {
   margin-bottom: 24px;
 }
 /* Grid de categorías - las cards reales se añadirán en HTML, no vía pseudo-elementos */
-.categories a[href="providers.html"] {
+.categories a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -196,17 +196,17 @@ html[data-theme="dark"] .hero a[href="providers.html"]:hover {
   margin-top: 8px;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-html[data-theme="dark"] .categories a[href="providers.html"] {
+html[data-theme="dark"] .categories a {
   background: #fff;
   color: var(--blue-dark);
   border-color: #fff;
 }
-.categories a[href="providers.html"]:hover {
+.categories a:hover {
   background: var(--blue-dark-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
-html[data-theme="dark"] .categories a[href="providers.html"]:hover {
+html[data-theme="dark"] .categories a:hover {
   background: #eaf3ff;
   border-color: #eaf3ff;
 }
