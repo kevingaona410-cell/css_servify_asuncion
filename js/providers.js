@@ -32,13 +32,24 @@ async function loadProviders() {
 // Función reutilizable para crear la tarjeta visual de cada proveedor.
 function createProviderCard(provider) {
     const article = document.createElement("article");
+    article.classList.add("provider-card");
 
     article.innerHTML = `
-        <h3>${provider.nombre}</h3>
-        <p>${provider.profesion}</p>
-        <p>${provider.experiencia} años de experiencia</p>
-        <p class="rating">★ ${provider.calificacion}</p>
-        <a href="provider.html?id=${provider.id}">Detalles</a>
+        <div class="provider-content">
+            <h3>${provider.nombre}</h3>
+            <p>${provider.profesion}</p>
+            <p>${provider.experiencia} años de experiencia</p>
+            <p class="rating">★ ${provider.calificacion}</p>
+        </div>
+
+        <div class="provider-overlay">
+            <h3>${provider.nombre}</h3>
+            <p>${provider.profesion}</p>
+            <p>${provider.experiencia} años de experiencia</p>
+            <p>${provider.descripcion}</p>
+            <p>📞 ${provider.telefono}</p>
+            <a href="provider.html?id=${provider.id}">Ver perfil →</a>
+        </div>
     `;
 
     return article;
