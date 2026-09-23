@@ -35,20 +35,22 @@ function createProviderCard(provider) {
     article.classList.add("provider-card");
 
     article.innerHTML = `
-        <div class="provider-content">
+        <div class="provider-card__summary">
             <h3>${provider.nombre}</h3>
             <p>${provider.profesion}</p>
             <p>${provider.experiencia} años de experiencia</p>
             <p class="rating">★ ${provider.calificacion}</p>
         </div>
 
-        <div class="provider-overlay">
-            <h3>${provider.nombre}</h3>
-            <p>${provider.profesion}</p>
-            <p>${provider.experiencia} años de experiencia</p>
-            <p>${provider.descripcion}</p>
-            <p>📞 ${provider.telefono}</p>
-            <a href="provider.html?id=${provider.id}">Ver perfil →</a>
+        <div class="provider-card__details">
+            <div class="provider-card__details-inner">
+                <h3>${provider.nombre}</h3>
+                <p>${provider.profesion}</p>
+                <p>${provider.experiencia} años de experiencia</p>
+                <p>${provider.descripcion}</p>
+                <p>📞 ${provider.telefono}</p>
+                <a href="provider.html?id=${provider.id}">Ver perfil →</a>
+            </div>
         </div>
     `;
 
