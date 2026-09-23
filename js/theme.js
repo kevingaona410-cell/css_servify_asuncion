@@ -1,5 +1,4 @@
-// theme.js - Toggle claro/oscuro | Header minimalista ☀️/🌙
-// Usa html[data-theme="dark"] + localStorage + prefers-color-scheme
+// Toggle claro/oscuro 
 
 const THEME_KEY = "servify-theme";
 const button = document.querySelector('button[aria-label="Cambiar tema"]');

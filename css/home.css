@@ -1,6 +1,5 @@
-/* home.css - Home | Hero, How it works, Categories, Final CTA */
-
-/* Hero - grande, atractivo, CTA destacado */
+/* Pagina inicial 
+/* Hero */
 .hero {
   max-width: 1280px;
   margin: 0 auto;
@@ -64,7 +63,6 @@ html[data-theme="dark"] .hero a:hover {
   background: #eaf3ff;
   border-color: #eaf3ff;
 }
-/* Ilustración vectorial placeholder - círculo deco + iconos flotantes */
 .hero > div:last-child {
   height: 380px;
   border-radius: var(--radius-lg);
@@ -95,7 +93,7 @@ html[data-theme="dark"] .hero a:hover {
  
 }
 
-/* How it works - muy limpio, 3 pasos */
+/* How it works  */
 html[data-theme="dark"] .how-it-works {
   background: #0B2545;
 }
@@ -193,7 +191,7 @@ html[data-theme="dark"] .how-it-works article span {
   gap: 20px;
   margin-bottom: 24px;
 }
-/* Grid de categorías - las cards reales se añadirán en HTML, no vía pseudo-elementos */
+/* Grid de categorías */
 .categories a {
   display: inline-flex;
   align-items: center;
@@ -225,7 +223,7 @@ html[data-theme="dark"] .categories a:hover {
   border-color: #eaf3ff;
 }
 
-/* Final CTA - azul oscuro con acento rojo sutil */
+/* Final CTA  */
 .final-cta {
   max-width: 1280px;
   width: calc(100% - 160px);

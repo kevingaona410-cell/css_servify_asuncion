@@ -1,5 +1,4 @@
 /* common.css - Base compartida | Servify Asunción */
-/* Design System: azul oscuro primario, celeste secundario, blanco, rojo acento sutil, Inter, light/dark */
 
 /* 1. Variables */
 :root {
@@ -50,7 +49,7 @@ a:focus-visible, button:focus-visible, select:focus-visible {
 }
 img { max-width: 100%; display: block; }
 
-/* 3. Header - minimalista, espacioso */
+/* 3. Header */
 header {
   position: sticky;
   top: 0;
@@ -76,7 +75,7 @@ header nav > a:first-child {
   align-items: center;
   gap: 10px;
 }
-/* Símbolo conexión/confianza: círculo + arco */
+/* logo */
 header nav > a:first-child::before {
   content: "";
   width: 34px;
@@ -140,7 +139,7 @@ header nav button[aria-pressed="true"]::after {
   background: #0B1D3A;
 }
 
-/* Dark mode - activado vía html[data-theme="dark"] por js/theme.js */
+/* Dark mode - activado vía html[data-theme="dark"] */
 html[data-theme="dark"] {
   --bg: #071A33;
   --bg-alt: #0B2545;
