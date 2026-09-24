@@ -8,6 +8,7 @@ const loadingState = document.getElementById("loading-state");
 const errorState = document.getElementById("error-state");
 const emptyState = document.getElementById("empty-state");
 const professionFilter = document.getElementById("category-filter");
+const professionSearch = document.getElementById("profession-search");
 
 let providersCache = [];
 
@@ -73,7 +74,7 @@ function populateProfessionFilter(providers) {
     });
 }
 
-// Esta función muestra solo los proveedores que coinciden con el filtro seleccionado.
+// Esta función muestra solo los proveedores que coinciden con los filtros activos.
 function renderProviders(providers) {
     providersList.innerHTML = "";
 
@@ -90,14 +91,22 @@ function renderProviders(providers) {
     });
 }
 
-professionFilter.addEventListener("change", () => {
+function applyFilters() {
     const selectedProfession = professionFilter.value;
-    const filteredProviders = selectedProfession === "all"
-        ? providersCache
-        : providersCache.filter(provider => provider.profesion === selectedProfession);
+    const searchTerm = professionSearch.value.trim().toLocaleLowerCase();
+    const filteredProviders = providersCache.filter(provider => {
+        const matchesCategory = selectedProfession === "all"
+            || provider.profesion === selectedProfession;
+        const matchesSearch = provider.profesion.toLocaleLowerCase().includes(searchTerm);
+
+        return matchesCategory && matchesSearch;
+    });
 
     renderProviders(filteredProviders);
-});
+}
+
+professionFilter.addEventListener("change", applyFilters);
+professionSearch.addEventListener("input", applyFilters);
 
 loadProviders();
 

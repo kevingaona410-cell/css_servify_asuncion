@@ -35,8 +35,24 @@ html[data-theme="dark"] .providers-header p:first-child { color: #fff; }
   align-items: center;
   gap: 10px;
 }
+.search-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .providers-section h2 { font-size: 20px; font-weight: 700; color: var(--heading-color); }
 .providers-section label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+#profession-search {
+  width: 320px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-header);
+  font-size: 14px;
+  color: var(--text);
+}
+#profession-search:focus { border-color: var(--blue-soft); outline: none; }
 #category-filter {
   height: 40px;
   padding: 0 36px 0 12px;
@@ -216,8 +232,10 @@ html[data-theme="dark"] #category-filter {
   .providers-section { padding: 0 20px 32px; }
   .providers-list { grid-template-columns: 1fr; }
   .providers-section > header { flex-direction: column; align-items: stretch; }
+  .search-control,
   .filter-control {
     flex-direction: column;
     align-items: stretch;
   }
+  #profession-search { width: auto; }
 }
